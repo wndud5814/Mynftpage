@@ -28,17 +28,17 @@ function getTime() {
 getTime();
 setInterval(getTime, 1000);
 
-const QUOTE_LIST = "quotesList";
+const QUOTES_LIST = "quotesList";
 
 function getQuotes() {
   const quotes = document.querySelector(".quotes");
 
-  let savedQuotes = localStorage.getItem(QUOTE_LIST);
+  let savedQuotes = localStorage.getItem(QUOTES_LIST);
 
   if (!savedQuotes) {
-    localStorage.setItem(QUOTE_LIST, JSON.stringify(["열심히 살자!"]));
+    localStorage.setItem(QUOTES_LIST, JSON.stringify(["열심히 살자!"]));
 
-    savedQuotes = localStorage.getItem(QUOTE_LIST);
+    savedQuotes = localStorage.getItem(QUOTES_LIST);
   }
 
   let parsedQuotes = JSON.parse(savedQuotes);
@@ -79,3 +79,19 @@ function onClickQuotes() {
   quotes.style.display = "none";
   newQuotes.style.display = "block";
 }
+
+async function getNft() {
+  const nftImg = document.querySelector(".nft-img");
+  const nftName = document.querySelector(".nft-name");
+  const nftDesc = document.querySelector(".nft-desc");
+
+  const response = await axios.get(
+    "https://olbm.mypinata.cloud/ipfs/QmNaSdkBYxG4UAkf9CcYxUZ55LxxpKP9hJRNYmoFQdyNmJ"
+  );
+
+  nftImg.src = response.data.image;
+  nftName.innerText = response.data.name;
+  nftDesc.innerText = response.data.description;
+}
+
+getNft();

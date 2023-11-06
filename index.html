@@ -8,22 +8,28 @@
   </head>
   <body>
     <div class="container">
-      <div class="container">
-        <header>
-          <div class="clock font-digi">00:00</div>
-          <div>
-            <button class="quotes DS-DIGI" onclick="onClickQuotes()">
-              Work. Life. Balance.
-            </button>
-            <div class="new-quotes">
-              <input class="new-quotes-input" type="text" />
-              <button onclick="onClickNewQuotes()">등 록</button>
-            </div>
+      <header>
+        <div class="clock font-digi">00:00</div>
+        <div>
+          <button class="quotes font-dnf" onclick="onClickQuotes()">
+            Work. Life. Balance.
+          </button>
+          <div class="new-quotes">
+            <input class="new-quotes-input" type="text" />
+            <button onclick="onClickNewQuotes()">등 록</button>
           </div>
-        </header>
-        <main>Hello, World!</main>
-      </div>
-    <video src="assets/images/background.mp4" autoplay muted loop></video> </video>
+        </div>
+      </header>
+      <main>
+        <div class="nft">
+          <img class="nft-img" loading="lazy" />
+          <h1 class="nft-name"></h1>
+          <h3 class="nft-desc"></h3>
+        </div>
+      </main>
+    </div>
+    <video src="./assets/images/background.mp4" autoplay muted loop></video>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
